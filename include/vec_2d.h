@@ -3,28 +3,31 @@
 
 #include <math.h>
 
-class vec_2d {
+class Vec2D {
   public:
     double x, y;
-    vec_2d(double x, double y) : x(x), y(y) {}
+    Vec2D(double x, double y) : x(x), y(y) {}
     
-    vec_2d operator+(const vec_2d &other);
-    vec_2d operator-(const vec_2d &other);
-    vec_2d operator*(double factor);
-    vec_2d operator/(double factor);
+    Vec2D operator+(const Vec2D &other);
+    Vec2D operator-(const Vec2D &other);
+    Vec2D operator*(double factor);
+    Vec2D operator/(double factor);
 
-    vec_2d normalized();
+    Vec2D normalized();
     double get_magnitude();
-    double dot(const vec_2d &other);
+    double dot(const Vec2D &other);
   
 };
 
-inline double vec_2d::get_magnitude() {
+inline double Vec2D::get_magnitude() {
   return sqrt(x*x + y*y);
 }
 
-inline double vec_2d::dot(const vec_2d &other) {
+inline double Vec2D::dot(const Vec2D &other) {
   return (this->x * other.x) + (this->y * other.y);
 }
+
+using Position2D = Vec2D;
+using Direction2D = Vec2D;
 
 #endif
