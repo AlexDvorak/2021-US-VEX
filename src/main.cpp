@@ -82,7 +82,13 @@ void usercontrol(void) {
     // Insert user code here. This is where you use the joystick values to
     // update your motors, etc.
     // ........................................................................
-
+    double rotate = Controller1.Axis1.position(percent);
+    double straight = Controller1.Axis3.position(percent);
+    LeftDriveMotors.setVelocity(straight+rotate,percent);
+    RightDriveMotors.setVelocity(straight-rotate,percent);
+    LeftDriveMotors.spin(forward);
+    RightDriveMotors.spin(forward);
+    
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
   }
@@ -100,14 +106,7 @@ int main() {
   pre_auton();
 
   // Prevent main from exiting with an infinite loop.
-   while(true){
-    double rotate = Controller1.Axis1.position(percent);
-    double straight = Controller1.Axis3.position(percent);
-    LeftDriveMotors.setVelocity(straight+rotate,percent);
-    RightDriveMotors.setVelocity(straight-rotate,percent);
-    LeftDriveMotors.spin(forward);
-    RightDriveMotors.spin(forward);
-  }
+   while(true){}
 }
 
 void autonomous_drive() {
