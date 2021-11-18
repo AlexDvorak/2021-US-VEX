@@ -6,6 +6,7 @@
 // RightDriveMotors     motor_group   11, 13          
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
+#include "vec_2d.h"
 #include "vex.h"
 #include <vector>
 
@@ -77,12 +78,11 @@ int main() {
   pre_auton();
 
   // Prevent main from exiting with an infinite loop.
-   while(true){}
+  while(true){}
 }
 
 void autonomous_drive() {
-
   // 1 rev ~= 10.2" 
-  std::vector<std::pair<double,double>> x_y_positions; // doubles represent inches
+  std::vector<std::pair<Position2D,Direction2D>> poses; // doubles represent inches
 
 }
