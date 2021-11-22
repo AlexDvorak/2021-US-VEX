@@ -1,4 +1,4 @@
-#include "vec_2d.h"
+#include "Vec2D.h"
 
 Vec2D Vec2D::normalized() {
     double vec_len = get_magnitude();
