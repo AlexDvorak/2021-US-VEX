@@ -14,7 +14,6 @@ vex::competition Competition;
 
 using namespace vex;
 
-
 /*                        Pre-Autonomous Functions
  *
  * You may want to perform some actions before the competition starts.
@@ -54,7 +53,8 @@ void usercontrol(void) {
         spin_(LeftDriveMotors, straight + rotate, percent);
         spin_(RightDriveMotors, straight - rotate, percent);
 
-        wait(20, msec); // Sleep the task for a short amount of time to prevent wasted resources.
+        wait(20, msec); // Sleep the task for a short amount of time to prevent
+                        // wasted resources.
     }
 }
 
@@ -71,4 +71,3 @@ int main() {
     while (true) {
     }
 }
-
