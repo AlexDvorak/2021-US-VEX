@@ -22,7 +22,6 @@ SRC_A  = Makefile
 
 # project header file locations
 INC_F  = include
-EXT_INC = units-lib/include
 
 ########################
 #ALL_FILES = $(SRC_C)
@@ -32,7 +31,6 @@ EXT_INC = units-lib/include
 #	clang-format -i $?
 #
 ########################
-INC_F += $(EXT_INC)
 
 # build targets
 all: $(BUILD)/$(PROJECT).bin
