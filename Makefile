@@ -23,17 +23,18 @@ SRC_A  = Makefile
 # project header file locations
 INC_F  = include
 
-########################
-#ALL_FILES = $(SRC_C)
-#ALL_FILES+= $(wildcard $(INC_F)/*.h)
-#
-#format: $(ALL_FILES)
-#	clang-format -i $?
-#
-########################
 
 # build targets
 all: $(BUILD)/$(PROJECT).bin
+
+########################
+
+ALL_FILES = $(SRC_C)
+ALL_FILES+= $(wildcard $(INC_F)/*.h)
+
+.PHONY: format
+format: $(ALL_FILES)
+	clang-format -i $?
 
 # include build rules
 include vex/mkrules.mk
