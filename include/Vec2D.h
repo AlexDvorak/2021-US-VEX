@@ -6,6 +6,7 @@ class Vec2D {
   public:
     double x, y;
     Vec2D(double x, double y) : x(x), y(y) {}
+    Vec2D() : x(0), y(0) {}
 
     Vec2D operator+(const Vec2D &other);
     Vec2D operator-(const Vec2D &other);
@@ -16,6 +17,7 @@ class Vec2D {
     double get_magnitude();
     double dot(const Vec2D &other);
     double angle();
+    double dist(const Vec2D &other);
 };
 
 using Position2D = Vec2D;
